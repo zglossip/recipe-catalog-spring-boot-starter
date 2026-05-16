@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.zglossip.recipecatalog'
-version = System.getenv('GITHUB_REF_NAME')?.replaceFirst(/^v/, '') ?: '0.0.1-SNAPSHOT'
+version = System.getenv('GITHUB_REF_NAME')?.replaceFirst(/^v/, '') ?: '0.0.2-SNAPSHOT'
 
 java {
 	toolchain {
@@ -18,8 +18,9 @@ repositories {
 
 dependencies {
 	implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.0')
-	implementation 'org.springframework.boot:spring-boot-autoconfigure'
+	annotationProcessor platform('org.springframework.boot:spring-boot-dependencies:3.5.0')
 
+	implementation 'org.springframework.boot:spring-boot-autoconfigure'
 	annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor'
 
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
