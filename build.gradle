@@ -1,0 +1,29 @@
+plugins {
+	id 'java-library'
+}
+
+group = 'com.zglossip.recipecatalog'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.0')
+	implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+	annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor'
+
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
