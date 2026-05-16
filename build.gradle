@@ -17,10 +17,11 @@ repositories {
 }
 
 dependencies {
-	implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.0')
-	annotationProcessor platform('org.springframework.boot:spring-boot-dependencies:3.5.0')
-
+	implementation platform('org.springframework.boot:spring-boot-dependencies:4.0.5')
 	implementation 'org.springframework.boot:spring-boot-autoconfigure'
+	implementation 'org.springframework.boot:spring-boot-restclient'
+
+	annotationProcessor platform('org.springframework.boot:spring-boot-dependencies:4.0.5')
 	annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor'
 
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
